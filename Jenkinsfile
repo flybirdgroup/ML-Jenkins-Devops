@@ -16,10 +16,10 @@ stages {
             }
         }
     }
-    stage('docker deploy'){
+    stage('docker build successfullly'){
         steps {
             script{
-                sh "docker run -p 5000:5000 deploy"
+                sh "time sleep 5"
              }
 
         }
