@@ -2,14 +2,14 @@ pipeline {
  agent any
 stages {
 
-    stage('Check') {
+    stage('Check docker version') {
         steps {
             script{
               sh "docker --version"
             }
         }
     }
-    stage('build') {
+    stage('rm containers') {
         steps {
             script{
               sh "sh rm-container.sh"
@@ -17,7 +17,7 @@ stages {
         }
     }
 
-    stage('docker delete none images'){
+    stage('docker build images'){
         steps {
             script{
                 sh "while ! docker build -t deploy . ; do sleep 30 ; done ; echo succeed"
