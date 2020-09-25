@@ -12,7 +12,7 @@ stages {
     stage('build') {
         steps {
             script{
-              sh "while ! docker build -t deploy . ; do sleep 60 ; done ; echo succeed"
+              sh "while ! docker build -t deploy . ; do sleep 30 ; done ; echo succeed"
             }
         }
     }
@@ -22,6 +22,13 @@ stages {
                 sh "sh docker.sh"
              }
 
+        }
+    }
+    stage('docker run'){
+        steps {
+            script{
+                sh "docker run -p 5000:5000 deploy"
+            }
         }
     }
   }
