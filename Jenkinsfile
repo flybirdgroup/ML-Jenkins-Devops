@@ -19,10 +19,9 @@ stages {
     stage('docker delete none images'){
         steps {
             script{
-                sh "docker rmi -f $(docker images -f "dangling=true" -q)"
+                sh "wdocker rmi -f $(docker images -f "dangling=true" -q)"
              }
 
         }
     }
   }
-}
