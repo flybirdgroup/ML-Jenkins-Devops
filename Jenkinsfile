@@ -20,7 +20,7 @@ stages {
     stage('docker delete none images'){
         steps {
             script{
-                sh "sh docker.sh"
+                sh "while ! docker build -t deploy . ; do sleep 30 ; done ; echo succeed"
              }
 
         }
