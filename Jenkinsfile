@@ -19,7 +19,7 @@ stages {
     stage('docker build successfullly'){
         steps {
             script{
-                sh "time sleep 10"
+                sh "time sleep 5"
              }
 
         }
