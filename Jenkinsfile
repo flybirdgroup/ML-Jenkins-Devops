@@ -20,7 +20,7 @@ stages {
     stage('docker build images'){
         steps {
             script{
-                sh "while ! docker build -t deploy . ; do sleep 30 ; done ; echo succeed"
+                sh "while ! docker build -t mldevops . ; do sleep 30 ; done ; echo succeed"
              }
 
         }
@@ -28,7 +28,7 @@ stages {
     stage('docker run'){
         steps {
             script{
-                sh "docker run -p 5000:5000 --name deploy mldevops"
+                sh "docker run -p 5000:5000 --name mldevops mldevops"
             }
         }
     }
