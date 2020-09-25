@@ -1,5 +1,5 @@
 #!/bin/bash
-if sudo docker ps -a | grep -i deploy; then
+if sudo docker ps -a | grep -i ML-devops; then
    sudo docker rm -f deploy
 fi
 
