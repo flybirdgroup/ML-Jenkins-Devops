@@ -28,7 +28,7 @@ stages {
     stage('docker run'){
         steps {
             script{
-                sh "docker run -p 5000:5000 --name deploy ML-devops"
+                sh "docker run -p 5000:5000 --name deploy MLdevops"
             }
         }
     }
