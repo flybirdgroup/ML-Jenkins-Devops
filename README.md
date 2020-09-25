@@ -29,3 +29,13 @@ stages {
 ```
 
 #3 go to your jenkins to run your pipeline
+
+
+Note:
+
+docker.sh--- remove <none> docker images
+
+shell.sh----build model and run apps
+
+rm-container.sh---delete container and build docker
+
