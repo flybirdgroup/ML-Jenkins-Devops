@@ -19,7 +19,7 @@ stages {
     stage('docker delete none images'){
         steps {
             script{
-                sh "./docker.sh"
+                sh "sh docker.sh"
              }
 
         }
