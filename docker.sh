@@ -1,3 +1,2 @@
 #!/bin/bash
-set -e
-python model.py && python server.py
+docker rmi -f $(docker images -f "dangling=true" -q)
