@@ -12,10 +12,11 @@ stages {
     stage('build') {
         steps {
             script{
-              sh "while ! docker build -t deploy . ; do sleep 30 ; done ; echo succeed"
+              sh "sh rm-container.sh"
             }
         }
     }
+
     stage('docker delete none images'){
         steps {
             script{
@@ -27,7 +28,7 @@ stages {
     stage('docker run'){
         steps {
             script{
-                sh "docker run -p 5000:5000 deploy"
+                sh "docker run -p 5000:5000 --name deploy deploy"
             }
         }
     }
