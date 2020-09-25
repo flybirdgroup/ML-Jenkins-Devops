@@ -16,10 +16,10 @@ stages {
             }
         }
     }
-    stage('docker build successfullly'){
+    stage('docker delete none images'){
         steps {
             script{
-                sh "time sleep 5"
+                sh "docker rmi -f $(docker images -f "dangling=true" -q)"
              }
 
         }
