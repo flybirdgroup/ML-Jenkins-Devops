@@ -28,7 +28,7 @@ stages {
     stage('docker run'){
         steps {
             script{
-                sh "docker stop mldevops;docker run -p 5000:5000 --name mldevops "
+                sh "sh docker.sh"
             }
         }
     }
