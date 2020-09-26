@@ -1,2 +1,4 @@
 #!/bin/bash
-docker rmi -f $(docker images -f "dangling=true" -q)
+if docker ps | grep mldevops; then docker stop mldevops;
+fi
+docker run -p 5000:5000 --name mldevops
