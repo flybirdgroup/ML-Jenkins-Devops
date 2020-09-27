@@ -37,5 +37,5 @@ docker.sh--- remove <none> docker images
 
 shell.sh----build model and run apps
 
-rm-container.sh---delete container and build docker
+rm-container.sh---delete images
 
