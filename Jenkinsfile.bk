@@ -1,0 +1,36 @@
+pipeline {
+ agent any
+stages {
+
+    stage('Check docker version') {
+        steps {
+            script{
+              sh "docker --version"
+            }
+        }
+    }
+    stage('rm containers') {
+        steps {
+            script{
+              sh "sh rm-container.sh"
+            }
+        }
+    }
+
+    stage('docker build images'){
+        steps {
+            script{
+                sh "while ! docker build -t mldevops . ; do sleep 30 ; done ; echo succeed"
+             }
+
+        }
+    }
+    stage('docker run'){
+        steps {
+            script{
+                sh "sh docker.sh"
+            }
+        }
+    }
+  }
+}
