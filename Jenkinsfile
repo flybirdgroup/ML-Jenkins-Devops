@@ -8,6 +8,8 @@ pipeline {
                 echo "[BUILD_ID]           : ${env.BUILD_ID}"
                 echo "[BUILD_NUMBER]       : ${env.BUILD_NUMBER}"
                 echo "[BUILD_DISPLAY_NAME] : ${env.BUILD_DISPLAY_NAME}"
+                echo "[BRANCH_NAME] : ${env.BRANCH_NAME}"
+                echo "[GIT_BRANCH] : ${env.GIT_BRANCH}"
             }
         }
         stage('Test'){
@@ -30,6 +32,7 @@ pipeline {
                 echo "[BUILD_URL]          : ${env.BUILD_URL}"
                 echo "[JOB_URL]            : ${env.JOB_URL}"
                 echo "[GIT_COMMIT]         : ${env.GIT_COMMIT}"
+
             }
         }
     }
