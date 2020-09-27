@@ -10,6 +10,7 @@ pipeline {
                 echo "[BUILD_DISPLAY_NAME] : ${env.BUILD_DISPLAY_NAME}"
                 echo "[BRANCH_NAME] : ${env.BRANCH_NAME}"
                 echo "[GIT_BRANCH] : ${env.GIT_BRANCH}"
+                echo "[PATH] : ${env.PATH}"
             }
         }
         stage('Test'){
